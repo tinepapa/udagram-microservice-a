@@ -5,9 +5,11 @@
 Udagram is a simple cloud application developed alongside the Udacity Cloud Engineering Nanodegree. It allows users to register and log into a web client, post photos to the feed, and process photos using an image filtering microservice.
 
 The project is split into two parts:
-1. Frontend - Angular web application built with Ionic Framework
-2. Backend RESTful API - Node-Express application
+1. Frontend - Angular web application built with Ionic Framework : folder udagram-frontend and udagram-reverseproxy folder for reverse proxy application.
+2. Backend RESTful API - Node-Express application divided in two microservices: folders udagram-api-feed and udagram-api-user. 
 
+
+<<<<<<< HEAD
 ## Getting Started
 > _tip_: it's recommended that you start with getting the backend API running since the frontend web application depends on the API.
 
@@ -74,3 +76,14 @@ Create an AWS S3 bucket. Set the config values for environment variables prefixe
     npm audit fix
     ```
 5. In `set_env.sh`, environment variables are set with `export $VAR=value`. Setting it this way is not permanent; every time you open a new terminal, you will have to run `set_env.sh` to reconfigure your environment variables. To verify if your environment variable is set, you can check the variable with a command like `echo $POSTGRES_USERNAME`.
+=======
+## Key Achievements: 
+1. Docker images in your repository in DockerHub
+2. TravisCI build pipeline showing successful build jobs
+3. Kubernetes kubectl get pods output
+4. Kubernetes kubectl describe services output
+5. Kubernetes kubectl describe hpa output
+6. Kubernetes kubectl logs <your pod name> output
+
+All the images are in screenshoot folded in the project directory 
+>>>>>>> 46d5163747d6f713256f2e15ca02e884bf325253
