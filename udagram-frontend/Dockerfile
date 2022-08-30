@@ -1,14 +1,10 @@
-FROM beevelop/ionic AS ionic
-
+FROM node:10 AS builder
 WORKDIR /usr/src/app
-
 COPY package*.json ./
-
 RUN npm ci
-
 COPY . .
-RUN ionic build
+RUN npm run build
 
-FROM nginx:alpine
 
-COPY --from=ionic  /usr/src/app/www /usr/share/nginx/html
+FROM trion/nginx-angular
+COPY --from=builder /usr/src/app/www /usr/share/nginx/html

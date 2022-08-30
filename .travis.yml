@@ -1,31 +1,14 @@
-language: node_js
-node_js:
-  - 12
+language: minimal
 
 services:
   - docker
 
-install:
-  - echo "nothing needs to be installed at this stage"
-  
-before_script: 
-  - echo "no tests"
-
 script:
   - docker --version
-  - docker build -t udagram-api-feed ./udagram-api-feed
-  - docker build -t udagram-api-user ./udagram-api-user
-  - docker build -t udagram-frontend ./udagram-frontend
-  - docker build -t reverseproxy ./udagram-reverseproxy
-  - docker tag udagram-api-feed tinepapa/udagram-api-feed:v1
-  - docker tag udagram-api-user tinepapa/udagram-api-user:v1
-  - docker tag udagram-frontend tinepapa/udagram-frontend:v1
-  - docker tag reverseproxy tinepapa/reverseproxy:v1
+  - docker-compose -f docker/docker-compose-build.yml build
 
-
-after_success:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push tinepapa/udagram-api-feed:v1
-  - docker push tinepapa/udagram-api-user:v1
-  - docker push tinepapa/udagram-frontend:v1
-  - docker push tinepapa/reverseproxy:v1
+deploy:
+  provider: script
+  script: bash docker/docker_push.sh
+  on:
+    branch: master
