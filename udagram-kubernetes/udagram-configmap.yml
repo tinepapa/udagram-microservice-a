@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: env-config
-  namespace: udagram
+  namespace: default
 data:
   POSTGRES_USERNAME: udagramtinedev
   POSTGRES_PASSWORD: udagramtine22
