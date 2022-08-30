@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: udagram-feed-api
-  namespace: udagram
+  namespace: default
   labels:
     app: udagram-feed-api
 spec:
