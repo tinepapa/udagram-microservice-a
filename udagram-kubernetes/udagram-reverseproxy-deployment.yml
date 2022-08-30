@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: tinepapa/udagram-reverseproxy:v1
+        image: tinepapa/reverseproxy:v1
         imagePullPolicy: Always          
         resources:
           requests:
