@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: udagram-feed-api
-        image: tinepapa/udagram-feed-api:latest
+        image: tinepapa/udagram-feed-api:v1
         imagePullPolicy: Always  
         resources:
           requests:

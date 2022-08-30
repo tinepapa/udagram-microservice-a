@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name:  udagram-frontend
-        image: tinepapa/udagram-frontend:latest
+        image: tinepapa/udagram-frontend:v1
         imagePullPolicy: Always  
         resources:
           requests:
